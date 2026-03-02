@@ -20,12 +20,7 @@ public class ProductService {
         return repo.findAll();
     }
     public Product getProductById(int id){
-        for(Product p : products){
-            if(id == p.getProduct_id()){
-                return p;
-            }
-        }
-        return null;
+        return repo.findById(id).orElse(new Product());
     }
 
     public void addProduct(Product p) {
