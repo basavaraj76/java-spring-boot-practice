@@ -24,23 +24,14 @@ public class ProductService {
     }
 
     public void addProduct(Product p) {
-        products.add(p);
+        repo.save(p);
     }
     public void updateProduct(Product prod){
-        int index = 0;
-        for (int i=0; i<products.size(); i++)
-            if(products.get(i).getProduct_id() == prod.getProduct_id())
-                index = i;
-        products.set(index,prod);
+        repo.save(prod);
 
     }
 
     public void deleteProduct(int p_id) {
-
-        int index = 0;
-        for (int i=0; i<products.size(); i++)
-            if(products.get(i).getProduct_id() == p_id)
-                index = i;
-        products.remove(index);
+        repo.deleteById(p_id);
     }
 }
