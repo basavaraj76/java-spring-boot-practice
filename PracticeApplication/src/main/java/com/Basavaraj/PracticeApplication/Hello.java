@@ -10,6 +10,9 @@ public class Hello {
         return "Hello Basavaraj Welcome to my website";
     }
 
-
+    @GetMapping("/user/{name}")
+    public String username(@PathVariable String name){
+        return "Hey What up " +name;
+    }
 
 }
