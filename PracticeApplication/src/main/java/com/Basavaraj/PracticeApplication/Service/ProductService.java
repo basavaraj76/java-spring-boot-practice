@@ -13,6 +13,10 @@ import java.util.List;
 @Service
 public class ProductService {
 
+//    List<Product> products = new ArrayList<>(Arrays.asList(
+//                                new Product(1001,"Iphone",80000),
+//                                new  Product(1002,"Vivo",30000.0)));
+
     @Autowired
     ProductRepo repo;
 
