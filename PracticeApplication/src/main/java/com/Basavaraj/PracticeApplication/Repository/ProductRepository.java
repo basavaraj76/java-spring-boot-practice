@@ -1,2 +1,4 @@
-package com.Basavaraj.PracticeApplication.Repository;public class ProductRepository {
+package com.Basavaraj.PracticeApplication.Repository;
+
+public class ProductRepository {
 }
