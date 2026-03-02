@@ -1,6 +1,8 @@
 package com.Basavaraj.PracticeApplication.Service;
 
 import com.Basavaraj.PracticeApplication.Model.Product;
+import com.Basavaraj.PracticeApplication.Repository.ProductRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -11,13 +13,11 @@ import java.util.List;
 @Service
 public class ProductService {
 
-
-    public List<Product> products = new ArrayList<>(Arrays.asList(
-            new Product(1001,"iphone",60000.00),
-            new  Product(1002,"Vivo",18000)));
+    @Autowired
+    ProductRepo repo;
 
     public List<Product> getProducts(){
-        return products;
+        return repo.findAll();
     }
     public Product getProductById(int id){
         for(Product p : products){
