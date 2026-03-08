@@ -4,10 +4,12 @@ import com.Basavaraj.PracticeApplication.Model.Product;
 import com.Basavaraj.PracticeApplication.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.cors.CorsConfiguration;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ProductController {
 
     @Autowired
@@ -18,7 +20,7 @@ public class ProductController {
         return service.getProducts();
     }
 
-    @PostMapping("/products/{id}")
+    @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable int id){
         return service.getProductById(id);
     }
